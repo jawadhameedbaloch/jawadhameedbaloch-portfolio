@@ -375,7 +375,7 @@ function App() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2">
-                      Bachelor of Science in Software Engineering
+                      Bachelor of Computer Science in Software Engineering
                     </h3>
                     <div className="flex items-center text-blue-400 mb-4 text-sm md:text-base">
                       <MapPin className="w-4 h-4 mr-2" />
