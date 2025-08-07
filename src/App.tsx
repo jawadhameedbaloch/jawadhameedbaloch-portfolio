@@ -431,7 +431,7 @@ function App() {
                 >
                   <Phone className="w-8 h-8 text-green-400 mx-auto mb-4 group-hover:scale-110 transition-transform" />
                   <h3 className="font-semibold text-white mb-2 text-sm md:text-base">Phone</h3>
-                  <p className="text-gray-400 text-sm">+92 326 9236946</p>
+                  <p className="text-gray-400 text-sm">+92 326 9236 946</p>
                 </a>
                 
                 <a
@@ -465,7 +465,7 @@ function App() {
       <footer className="py-8 bg-gray-900 border-t border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gray-400 text-sm md:text-base">
-            © 2024 Jawad Hameed Baloch. Built with React & Tailwind CSS.
+            © 2024 Jawad Hameed Baloch.
           </p>
         </div>
       </footer>
