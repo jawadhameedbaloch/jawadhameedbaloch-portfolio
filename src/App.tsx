@@ -110,7 +110,7 @@ function App() {
       title: 'HireSight - Be Seen Be Hired',
       description: 'An AI-powered resume and job description matching platform for students and job seekers.',
       tech: ['React', 'Tailwind', 'Grok API', 'Supabase', 'jsPDF'],
-      link: 'https://thehiresight.netlify.app',
+      link: 'https://hiresight.xyz',
       icon: <Bot className="w-6 h-6" />,
       showLink: true
     },
