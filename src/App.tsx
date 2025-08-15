@@ -130,14 +130,15 @@ function App() {
       icon: <Database className="w-6 h-6" />,
       showLink: false
     },
-    {
-      title: 'Flower Classifier AI App',
-      description: 'Web app that classifies flower images using a trained model with real-time predictions.',
-      tech: ['TensorFlow', 'Keras', 'Streamlit', 'Python', 'NumPy'],
-      link: '#',
-      icon: <Code className="w-6 h-6" />,
-      showLink: false
-    }
+ {
+  title: 'Personal VPN Extension',
+  description: 'A browser extension that allows users to connect through secure VPN servers in 8 countries for enhanced privacy and unrestricted browsing.',
+  tech: ['JavaScript', 'Node.js', 'WebExtensions API', 'Express.js', 'Socket.io', 'Browser Extension Development'],
+  link: '#',
+  icon: <Code className="w-6 h-6" />,
+  showLink: false
+}
+
   ];
 
   return (
