@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Shield } from 'lucide-react';
 import { 
   Github, 
   Linkedin, 
@@ -135,7 +136,7 @@ function App() {
   description: 'A browser extension that allows users to connect through secure VPN servers in 8 countries for enhanced privacy and unrestricted browsing.',
   tech: ['JavaScript', 'Node.js', 'WebExtensions API', 'Express.js', 'Socket.io', 'Browser Extension Development'],
   link: '#',
-  icon: <Code className="w-6 h-6" />,
+  icon: <Shield className="w-6 h-6" />,
   showLink: false
 }
 
