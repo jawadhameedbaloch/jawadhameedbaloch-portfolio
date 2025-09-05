@@ -346,7 +346,7 @@ function App() {
       showLink: true
     },
     {
-      title: 'Mindsight',
+      title: 'TaskBot',
       description: 'Personal AI assistant trained on local system data to perform file access, queries, and automation.',
       tech: ['Python', 'NLP', 'Voice Recognition', 'OS Integration'],
       link: '#',
