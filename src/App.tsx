@@ -223,55 +223,125 @@ const WhatsAppIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
 );
 
 // Skill Icons Component
+// Skill Icons Component
 const SkillIcons = () => {
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const skillIcons = [
-    { name: 'Python', icon: '🐍', color: 'from-blue-500 to-blue-600' },
-    { name: 'Streamlit', icon: '📊', color: 'from-red-500 to-pink-600' },
-    { name: 'AI/ML', icon: '🤖', color: 'from-purple-500 to-pink-600' },
-    { name: 'LLMs', icon: '🧠', color: 'from-indigo-500 to-purple-600' },
-    { name: 'Prompt Engineering', icon: '✍️', color: 'from-green-500 to-teal-600' },
-    { name: 'HTML/CSS', icon: '🌐', color: 'from-orange-500 to-red-600' },
-    { name: 'Java', icon: '☕', color: 'from-orange-500 to-red-600' },
-    { name: 'C#', icon: '💎', color: 'from-purple-500 to-pink-600' },
-    { name: 'REST APIs', icon: '🔌', color: 'from-blue-500 to-cyan-600' },
-    { name: 'Git', icon: '📚', color: 'from-orange-600 to-red-700' },
-    { name: 'GitHub', icon: '🐙', color: 'from-gray-700 to-black' },
-    { name: 'NumPy', icon: '🔢', color: 'from-blue-600 to-indigo-700' },
-    { name: 'Pandas', icon: '🐼', color: 'from-blue-500 to-blue-600' },
-    { name: 'PyTorch', icon: '🔥', color: 'from-orange-500 to-red-600' },
-    { name: 'Hugging Face', icon: '🤗', color: 'from-yellow-400 to-orange-500' },
-    { name: 'VS Code', icon: '💻', color: 'from-blue-500 to-blue-600' },
-    { name: 'OpenAI', icon: '🧪', color: 'from-green-500 to-emerald-600' },
+    { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', color: 'from-blue-500 to-blue-600' },
+    { name: 'Streamlit', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg', color: 'from-red-500 to-pink-600' },
+    { name: 'AI/ML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg', color: 'from-purple-500 to-pink-600' },
+    { name: 'LLMs', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg', color: 'from-indigo-500 to-purple-600' },
+    { name: 'Prompt Engineering', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg', color: 'from-green-500 to-teal-600' },
+    { name: 'HTML/CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', color: 'from-orange-500 to-red-600' },
+    { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', color: 'from-orange-500 to-red-600' },
+    { name: 'C#', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg', color: 'from-purple-500 to-pink-600' },
+    { name: 'REST APIs', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', color: 'from-blue-500 to-cyan-600' },
+    { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', color: 'from-orange-600 to-red-700' },
+    { name: 'GitHub', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', color: 'from-gray-700 to-black' },
+    { name: 'NumPy', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg', color: 'from-blue-600 to-indigo-700' },
+    { name: 'Pandas', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg', color: 'from-blue-500 to-blue-600' },
+    { name: 'PyTorch', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg', color: 'from-orange-500 to-red-600' },
+    { name: 'Hugging Face', logo: 'https://huggingface.co/front/assets/huggingface_logo-noborder.svg', color: 'from-yellow-400 to-orange-500' },
+    { name: 'VS Code', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', color: 'from-blue-500 to-blue-600' },
+    { name: 'OpenAI', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg', color: 'from-green-500 to-emerald-600' },
     // Duplicate for continuous loop
-    { name: 'Python', icon: '🐍', color: 'from-blue-500 to-blue-600' },
-    { name: 'Streamlit', icon: '📊', color: 'from-red-500 to-pink-600' },
-    { name: 'AI/ML', icon: '🤖', color: 'from-purple-500 to-pink-600' },
-    { name: 'LLMs', icon: '🧠', color: 'from-indigo-500 to-purple-600' },
-    { name: 'Prompt Engineering', icon: '✍️', color: 'from-green-500 to-teal-600' },
-    { name: 'HTML/CSS', icon: '🌐', color: 'from-orange-500 to-red-600' },
-    { name: 'Java', icon: '☕', color: 'from-orange-500 to-red-600' },
-    { name: 'C#', icon: '💎', color: 'from-purple-500 to-pink-600' },
-    { name: 'REST APIs', icon: '🔌', color: 'from-blue-500 to-cyan-600' },
-    { name: 'Git', icon: '📚', color: 'from-orange-600 to-red-700' },
-    { name: 'GitHub', icon: '🐙', color: 'from-gray-700 to-black' },
-    { name: 'NumPy', icon: '🔢', color: 'from-blue-600 to-indigo-700' },
-    { name: 'Pandas', icon: '🐼', color: 'from-blue-500 to-blue-600' },
-    { name: 'PyTorch', icon: '🔥', color: 'from-orange-500 to-red-600' },
-    { name: 'Hugging Face', icon: '🤗', color: 'from-yellow-400 to-orange-500' },
-    { name: 'VS Code', icon: '💻', color: 'from-blue-500 to-blue-600' },
-    { name: 'OpenAI', icon: '🧪', color: 'from-green-500 to-emerald-600' },
+    { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', color: 'from-blue-500 to-blue-600' },
+    { name: 'Streamlit', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg', color: 'from-red-500 to-pink-600' },
+    { name: 'AI/ML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg', color: 'from-purple-500 to-pink-600' },
+    { name: 'LLMs', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg', color: 'from-indigo-500 to-purple-600' },
+    { name: 'Prompt Engineering', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg', color: 'from-green-500 to-teal-600' },
+    { name: 'HTML/CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', color: 'from-orange-500 to-red-600' },
+    { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', color: 'from-orange-500 to-red-600' },
+    { name: 'C#', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg', color: 'from-purple-500 to-pink-600' },
+    { name: 'REST APIs', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', color: 'from-blue-500 to-cyan-600' },
+    { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', color: 'from-orange-600 to-red-700' },
+    { name: 'GitHub', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', color: 'from-gray-700 to-black' },
+    { name: 'NumPy', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg', color: 'from-blue-600 to-indigo-700' },
+    { name: 'Pandas', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg', color: 'from-blue-500 to-blue-600' },
+    { name: 'PyTorch', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg', color: 'from-orange-500 to-red-600' },
+    { name: 'Hugging Face', logo: 'https://huggingface.co/front/assets/huggingface_logo-noborder.svg', color: 'from-yellow-400 to-orange-500' },
+    { name: 'VS Code', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', color: 'from-blue-500 to-blue-600' },
+    { name: 'OpenAI', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg', color: 'from-green-500 to-emerald-600' },
   ];
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartX(e.pageX);
+    setScrollLeft(containerRef.current?.scrollLeft || 0);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX;
+    const walk = (x - startX) * 2;
+    if (containerRef.current) {
+      containerRef.current.scrollLeft = scrollLeft - walk;
+    }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX);
+    setScrollLeft(containerRef.current?.scrollLeft || 0);
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.touches[0].pageX;
+    const walk = (x - startX) * 2;
+    if (containerRef.current) {
+      containerRef.current.scrollLeft = scrollLeft - walk;
+    }
+  };
 
   return (
     <div className="relative overflow-hidden">
-      <div className="flex animate-scroll space-x-8 whitespace-nowrap">
+      <div 
+        ref={containerRef}
+        className="flex space-x-8 whitespace-nowrap cursor-grab select-none animate-scroll"
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchMove={handleTouchMove}
+        style={{ 
+          userSelect: 'none',
+          overflowX: 'auto',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none'
+        }}
+      >
         {skillIcons.map((skill, index) => (
           <div
             key={index}
             className="flex flex-col items-center space-y-2 flex-shrink-0"
           >
             <div className={`w-16 h-16 bg-gradient-to-br ${skill.color} rounded-lg flex items-center justify-center text-white text-2xl font-bold shadow-lg`}>
-              {skill.icon}
+              <img 
+                src={skill.logo} 
+                alt={skill.name} 
+                className="w-10 h-10 object-contain filter brightness-0 invert"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  target.parentElement!.innerHTML = `<span class="text-2xl">${skill.name.charAt(0)}</span>`;
+                }}
+              />
             </div>
             <span className="text-gray-300 text-sm font-medium">{skill.name}</span>
           </div>
@@ -280,61 +350,6 @@ const SkillIcons = () => {
     </div>
   );
 };
-
-function App() {
-  const animatedElements = useScrollAnimation();
-  const formRef = useRef<HTMLFormElement>(null);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
-  const skills = [
-    'Python', 'Streamlit', 'Generative AI', 'Large Language Models (LLMs)', 
-    'Prompt Engineering', 'HTML/CSS', 'Java', 'C#', 'REST APIs', 
-    'Git & GitHub', 'NumPy & Pandas', 'PyTorch', 'Hugging Face Transformers', 
-    'VS Code', 'OpenAI API'
-  ];
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-
-    try {
-      // You'll need to replace these with your actual EmailJS credentials
-      const result = await emailjs.sendForm(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-        formRef.current!,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
-      );
-
-      if (result.status === 200) {
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => setSubmitStatus('idle'), 5000);
-      } else {
-        setSubmitStatus('error');
-      }
-    } catch (error) {
-      console.error('Email sending failed:', error);
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const projects = [
     {
