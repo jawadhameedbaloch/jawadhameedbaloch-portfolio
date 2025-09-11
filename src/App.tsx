@@ -408,7 +408,7 @@ function App() {
   const projects = [
     {
       title: 'HireSight - Be Seen Be Hired',
-      description: 'HireSight is a free AI-powered resume analyzer that optimizes your resume for ATS, highlights missing skills, and provides instant keyword insights with downloadable reports.',
+      description: 'HireSight is a free AI-powered resume analyzer that optimizes your resume for ATS, highlights missing skills, and provides instant keyword insights with downloadable reports',
       tech: ['React', 'Tailwind', 'Grok API', 'Supabase', 'jsPDF'],
       link: 'https://hiresight.xyz/',
       icon: <Bot className="w-6 h-6" />,
