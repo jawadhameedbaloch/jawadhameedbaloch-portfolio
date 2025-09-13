@@ -605,7 +605,7 @@ function App() {
                   <div>
                     <h3 className="text-xl sm:text-2xl font-semibold text-white">Generative AI Engineer</h3>
                     <p className="text-gray-400 text-sm sm:text-base">Freelance & Personal Projects</p>
-                    <p className="text-gray-500 text-sm">2022 - Present</p>
+                    <p className="text-gray-500 text-sm">2023 - Present</p>
                   </div>
                 </div>
               </div>
