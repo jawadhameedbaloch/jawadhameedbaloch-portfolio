@@ -245,6 +245,9 @@ const SkillIcons = () => {
     { name: 'Pandas', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg', color: 'from-blue-500 to-blue-600' },
     { name: 'PyTorch', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg', color: 'from-orange-500 to-red-600' },
     { name: 'Hugging Face', logo: 'https://huggingface.co/front/assets/huggingface_logo-noborder.svg', color: 'from-yellow-400 to-orange-500' },
+    { name: 'Scikit-learn', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikit-learn/scikit-learn-original.svg', color: 'from-orange-400 to-yellow-500' },
+    { name: 'Jupyter', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg', color: 'from-orange-500 to-red-600' },
+    { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', color: 'from-blue-400 to-cyan-500' },
     { name: 'VS Code', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', color: 'from-blue-500 to-blue-600' },
     { name: 'OpenAI', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg', color: 'from-green-500 to-emerald-600' },
     // Duplicate for continuous loop
@@ -263,6 +266,9 @@ const SkillIcons = () => {
     { name: 'Pandas', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg', color: 'from-blue-500 to-blue-600' },
     { name: 'PyTorch', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg', color: 'from-orange-500 to-red-600' },
     { name: 'Hugging Face', logo: 'https://huggingface.co/front/assets/huggingface_logo-noborder.svg', color: 'from-yellow-400 to-orange-500' },
+    { name: 'Scikit-learn', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikit-learn/scikit-learn-original.svg', color: 'from-orange-400 to-yellow-500' },
+    { name: 'Jupyter', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg', color: 'from-orange-500 to-red-600' },
+    { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', color: 'from-blue-400 to-cyan-500' },
     { name: 'VS Code', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', color: 'from-blue-500 to-blue-600' },
     { name: 'OpenAI', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg', color: 'from-green-500 to-emerald-600' },
   ];
@@ -596,7 +602,22 @@ function App() {
               Experiences
             </h2>
             
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto space-y-8">
+              {/* New Internship Experience */}
+              <div className="bg-gray-800/80 p-6 sm:p-8 rounded-lg border border-gray-700 hover:border-blue-500 transition-all duration-300">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Briefcase className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-semibold text-white">AI Intern</h3>
+                    <p className="text-gray-400 text-sm sm:text-base">Digital Empowerment Network</p>
+                    <p className="text-gray-500 text-sm">July 2024 - Sept 2024</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Existing Freelance Experience */}
               <div className="bg-gray-800/80 p-6 sm:p-8 rounded-lg border border-gray-700 hover:border-blue-500 transition-all duration-300">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -637,7 +658,7 @@ function App() {
           }
           
           .animate-scroll {
-            animation: scroll 30s linear infinite;
+            animation: scroll 40s linear infinite;
           }
           
           .animate-scroll:hover {
@@ -738,7 +759,7 @@ function App() {
               <div className="bg-gray-800/80 p-6 sm:p-8 rounded-lg border border-gray-700 hover:border-blue-500 transition-all duration-300">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <User className="w-6 h-6 text-white" />
+                    <GraduationCap className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h3 className="text-xl sm:text-2xl font-semibold text-white">Bachelor of Science in Software Engineering</h3>
