@@ -224,11 +224,6 @@ const WhatsAppIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
 
 // Skill Icons Component
 const SkillIcons = () => {
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-
   const skillIcons = [
     { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', color: 'from-blue-500 to-blue-600' },
     { name: 'Streamlit', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg', color: 'from-red-500 to-pink-600' },
@@ -272,63 +267,68 @@ const SkillIcons = () => {
     { name: 'VS Code', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', color: 'from-blue-500 to-blue-600' },
     { name: 'OpenAI', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg', color: 'from-green-500 to-emerald-600' },
   ];
+  
+  const containerRef = useRef<HTMLDivElement>(null);
+  const animationFrameRef = useRef<number>();
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  
+  // JS-based animation loop
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const animate = () => {
+      if (!isDragging) { // Only animate if not dragging
+        container.scrollLeft += 0.5; // Adjust speed here
+        if (container.scrollLeft >= container.scrollWidth / 2) {
+          container.scrollLeft = 0;
+        }
+      }
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+
+    animationFrameRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [isDragging]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
+    if (!containerRef.current) return;
     setIsDragging(true);
-    setStartX(e.pageX);
-    setScrollLeft(containerRef.current?.scrollLeft || 0);
+    setStartX(e.pageX - containerRef.current.offsetLeft);
+    setScrollLeft(containerRef.current.scrollLeft);
   };
-
-  const handleMouseUp = () => {
+  
+  const handleMouseLeaveOrUp = () => {
     setIsDragging(false);
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
+    if (!isDragging || !containerRef.current) return;
     e.preventDefault();
-    const x = e.pageX;
-    const walk = (x - startX) * 2;
-    if (containerRef.current) {
-      containerRef.current.scrollLeft = scrollLeft - walk;
-    }
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setIsDragging(true);
-    setStartX(e.touches[0].pageX);
-    setScrollLeft(containerRef.current?.scrollLeft || 0);
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.touches[0].pageX;
-    const walk = (x - startX) * 2;
-    if (containerRef.current) {
-      containerRef.current.scrollLeft = scrollLeft - walk;
-    }
+    const x = e.pageX - containerRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Multiplier for faster drag
+    containerRef.current.scrollLeft = scrollLeft - walk;
   };
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden group">
       <div 
         ref={containerRef}
-        className="flex space-x-8 whitespace-nowrap cursor-grab select-none animate-scroll"
+        className="flex space-x-8 whitespace-nowrap cursor-grab select-none"
         onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
+        onMouseUp={handleMouseLeaveOrUp}
+        onMouseLeave={handleMouseLeaveOrUp}
         onMouseMove={handleMouseMove}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-        onTouchMove={handleTouchMove}
         style={{ 
           userSelect: 'none',
-          overflowX: 'auto',
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none'
+          overflowX: 'hidden', // Hide scrollbar, movement is programmatic
         }}
       >
         {skillIcons.map((skill, index) => (
@@ -646,36 +646,6 @@ function App() {
             <SkillIcons />
           </div>
         </div>
-        
-        <style>{`
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-          
-          .animate-scroll {
-            animation: scroll 40s linear infinite;
-          }
-          
-          .animate-scroll:hover {
-            animation-play-state: paused;
-          }
-          
-          /* Hide scrollbar for Chrome, Safari and Opera */
-          .overflow-x-auto::-webkit-scrollbar {
-            display: none;
-          }
-          
-          /* Hide scrollbar for IE, Edge and Firefox */
-          .overflow-x-auto {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-        `}</style>
       </section>
 
       {/* Projects Section */}
