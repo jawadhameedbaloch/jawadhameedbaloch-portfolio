@@ -612,7 +612,7 @@ function App() {
                   <div>
                     <h3 className="text-xl sm:text-2xl font-semibold text-white">AI Intern</h3>
                     <p className="text-gray-400 text-sm sm:text-base">Digital Empowerment Network</p>
-                    <p className="text-gray-500 text-sm">July 2024 - Sept 2024</p>
+                    <p className="text-gray-500 text-sm">July 2025 - Sept 2025</p>
                   </div>
                 </div>
               </div>
