@@ -112,7 +112,7 @@ const AnimatedCodeEditor = () => {
   const codeLines = [
     { line: 1, code: <><span className="text-purple-400">const</span> <span className="text-blue-400">developer</span> = {`{`}</> },
     { line: 2, code: <><span className="text-green-400">name:</span> <span className="text-yellow-400">'Jawad Hameed Baloch'</span>,</> },
-    { line: 3, code: <><span className="text-green-400">role:</span> <span className="text-yellow-400">'AI Engineer'</span>,</> },
+    { line: 3, code: <><span className="text-green-400">role:</span> <span className="text-yellow-400">'AI Enthusiast'</span>,</> },
     { line: 4, code: <><span className="text-green-400">skills:</span> [<span className="text-yellow-400">'Python'</span>, <span className="text-yellow-400">'Generative AI'</span>],</> },
     { line: 5, code: <><span className="text-green-400">passion:</span> <span className="text-yellow-400">'Innovation'</span></> },
     { line: 6, code: <>{`}`};</> },
