@@ -734,7 +734,6 @@ function App() {
                   <div>
                     <h3 className="text-xl sm:text-2xl font-semibold text-white">Bachelor of Science in Software Engineering</h3>
                     <p className="text-gray-400 text-sm sm:text-base">Sukkur IBA University</p>
-                    <p className="text-gray-500 text-sm">2021 - 2025</p>
                   </div>
                 </div>
               </div>
