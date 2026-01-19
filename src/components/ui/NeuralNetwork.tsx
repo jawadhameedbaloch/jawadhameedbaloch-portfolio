@@ -14,9 +14,11 @@ const NeuralNetwork = () => {
         let height = canvas.height = window.innerHeight;
 
         const particles: Particle[] = [];
-        const particleCount = 100; // Increased for density
-        const connectionDistance = 150;
-        const mouseDistance = 200;
+        // Reduce density on mobile
+        const isMobile = width < 768;
+        const particleCount = isMobile ? 40 : 100;
+        const connectionDistance = isMobile ? 100 : 150;
+        const mouseDistance = isMobile ? 120 : 200;
 
         let mouseX = 0;
         let mouseY = 0;

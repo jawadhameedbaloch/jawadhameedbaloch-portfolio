@@ -7,7 +7,7 @@ import TypewriterEffect from '../ui/TypewriterEffect';
 
 const Hero = () => {
     return (
-        <section id="home" className="min-h-screen relative flex items-center justify-center pt-20 overflow-hidden bg-matte-charcoal">
+        <section id="home" className="min-h-screen relative flex items-center justify-center overflow-hidden bg-matte-charcoal">
             <NeuralNetwork />
 
             <div className="container mx-auto px-6 relative z-10">

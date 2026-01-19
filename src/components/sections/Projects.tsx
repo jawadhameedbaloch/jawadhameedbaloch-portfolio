@@ -1,4 +1,4 @@
-import { Github, ExternalLink, Bot, Shield, ArrowUpRight } from 'lucide-react';
+import { Github, ExternalLink, Bot, Shield, ArrowUpRight, ScanEye } from 'lucide-react';
 import RevealCard from '../ui/RevealCard';
 import { motion } from 'framer-motion';
 
@@ -9,7 +9,7 @@ const Projects = () => {
             description: 'AI-powered hiring intelligence platform that optimizes resumes for ATS compatibility. Leverages advanced LLMs to provide real-time matching analysis and keyword optimization, increasing interview chances by 70%.',
             tech: ['React', 'TypeScript', 'Tailwind', 'Supabase'],
             link: 'https://hiresight.xyz',
-            icon: <img src="/favicon (2).ico" alt="HireSight" className="w-8 h-8 object-contain" />,
+            icon: <ScanEye className="w-8 h-8 text-cyber-cyan" />,
             gradient: "from-purple-500/20 to-cyan-500/20"
         },
         {
