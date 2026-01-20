@@ -71,7 +71,7 @@ const Hero = () => {
                             ))}
                         </div>
 
-                        <a href="/Jawaad Hameed Resume.pdf" target="_blank" className="relative group px-8 py-4 bg-gradient-to-r from-cyber-cyan to-amethyst-purple rounded-full font-bold text-white overflow-hidden shadow-lg shadow-cyber-cyan/25 hover:shadow-cyber-cyan/40 transition-shadow duration-300">
+                        <a href="/Jawad Hameed Baloch-Resume.pdf" target="_blank" className="relative group px-8 py-4 bg-gradient-to-r from-cyber-cyan to-amethyst-purple rounded-full font-bold text-white overflow-hidden shadow-lg shadow-cyber-cyan/25 hover:shadow-cyber-cyan/40 transition-shadow duration-300">
                             <span className="absolute inset-0 bg-white/20 group-hover:translate-x-full transition-transform duration-500 ease-out -skew-x-12 origin-left" />
                             <span className="relative flex items-center gap-2">
                                 <Download className="w-5 h-5" />
