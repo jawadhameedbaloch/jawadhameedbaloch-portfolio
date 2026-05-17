@@ -7,7 +7,7 @@ const Projects = () => {
         {
             title: 'ATS Resume Maker',
             description: 'Engineered a completely free, AI-powered web application that analyzes and optimizes unstructured resume data for 100% Applicant Tracking System (ATS) compliance. Designed with a frictionless, no-signup architecture, the platform empowers job seekers to seamlessly bypass screening bots and maximize their interview callback rates.',
-            tech: ['React', 'TypeScript', 'Tailwind', 'Supabase'],
+            tech: ['React', 'TypeScript', 'Tailwind', 'nodejs', 'groqapi'],
             link: 'https://atsresumemaker.net/',
             icon: <ScanEye className="w-8 h-8 text-cyber-cyan" />,
             gradient: "from-purple-500/20 to-cyan-500/20"
