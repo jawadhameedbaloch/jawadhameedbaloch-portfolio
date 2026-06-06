@@ -28,14 +28,13 @@ const Education = () => {
                             <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl -mr-16 -mt-16 transition-all duration-500 group-hover:bg-purple-500/20"></div>
 
                             <div className="flex flex-col md:flex-row md:items-center gap-6 relative z-10">
-                                <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-900/20 group-hover:rotate-6 transition-transform duration-300">
-                                    <GraduationCap className="w-8 h-8 text-white" />
-                                </div>
+                                <div className="w-16 h-16 bg-[#0B7283] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#0B7283]/30 group-hover:rotate-6 transition-transform duration-300">
+    <GraduationCap className="w-8 h-8 text-white" />
+</div>
 
-                                <div className="flex-1">
-                                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Bachelor of Science in Software Engineering</h3>
-                                    <p className="text-purple-400 font-medium text-lg mb-4">Sukkur IBA University</p>
-
+<div className="flex-1">
+    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Bachelor of Science in Software Engineering</h3>
+    <p className="text-[#0B7283] font-medium text-lg mb-4">Sukkur IBA University</p>
                                     <div className="flex flex-wrap gap-4 text-sm text-gray-400">
                                         {/* Date removed as per request */}
                                         <div className="flex items-center">
