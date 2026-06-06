@@ -32,7 +32,7 @@ const Hero = () => {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="text-[1.7rem] sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight mb-4 md:mb-8 whitespace-nowrap overflow-visible flex justify-center w-full"
                     >
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-cyber-cyan to-amethyst-purple bg-300% animate-gradient px-4 pb-2">
+                        <span className="text-white px-4 pb-2">
                         JAWAD HAMEED BALOCH
                         </span>
                     </motion.h1>
