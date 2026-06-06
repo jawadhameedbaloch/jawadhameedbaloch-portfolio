@@ -17,7 +17,7 @@ const Experience = () => {
         {
             title: 'Generative AI Engineer',
             company: 'Freelance & Personal Projects',
-            period: '2022 - Present',
+            period: '2023 - Present',
             description: 'Developing autonomous agents and scalable AI infrastructures. Delivering custom LLM fine-tuning and end-to-end automation workflows for international clients.',
             stack: ['PyTorch', 'FastAPI', 'Docker', 'React'],
             type: 'Freelance'
