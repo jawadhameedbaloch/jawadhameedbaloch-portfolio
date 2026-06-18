@@ -1,4 +1,4 @@
-import { Github, ExternalLink, Bot, Shield, ArrowUpRight, ScanEye } from 'lucide-react';
+import { Github, ExternalLink, Bot, Shield, ArrowUpRight, ScanEye, Code2 } from 'lucide-react';
 import RevealCard from '../ui/RevealCard';
 import { motion } from 'framer-motion';
 
@@ -13,11 +13,11 @@ const Projects = () => {
             gradient: "from-purple-500/20 to-cyan-500/20"
         },
         {
-            title: 'Hey J',
-            description: 'Hyper-personalized AI assistant trained on personal system data. Executes complex system commands, manages files, and automates daily workflows through natural language interaction.',
-            tech: ['LangChain', 'Python', 'Local LLMs', 'Shell Automation'],
-            link: '#',
-            icon: <Bot className="w-8 h-8 text-cyber-cyan" />,
+            title: 'VYNTEX',
+            description: 'Full-stack AI application that lets developers chat with any GitHub repository using natural language. Paste a repo URL and the system clones it, chunks the source, generates embeddings, and builds a semantic vector index — powering a complete RAG pipeline that returns context-grounded answers with exact file paths and line number references.',
+            tech: ['React', 'TypeScript', 'FastAPI', 'ChromaDB', 'sentence-transformers', 'Groq API'],
+            link: 'https://getvyntex.vercel.app/',
+            icon: <Code2 className="w-8 h-8 text-cyber-cyan" />,
             gradient: "from-cyan-500/20 to-blue-500/20"
         },
         {
