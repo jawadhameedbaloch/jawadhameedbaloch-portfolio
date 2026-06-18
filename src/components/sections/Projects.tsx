@@ -21,7 +21,7 @@ const Projects = () => {
             gradient: "from-cyan-500/20 to-blue-500/20"
         },
         {
-            title: 'SecureVPN Protocol',
+            title: 'FreeVPN Proxy Switcher — Chrome Extension',
             description: 'High-performance, custom-built VPN solution focusing on zero-logging and military-grade encryption. Features optimized routing algorithms for minimal latency.',
             tech: ['Rust', 'Networking', 'Cryptography', 'Linux'],
             link: '#',
