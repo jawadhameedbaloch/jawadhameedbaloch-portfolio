@@ -22,8 +22,8 @@ const Projects = () => {
         },
         {
             title: 'FreeVPN Proxy Switcher — Chrome Extension',
-            description: 'High-performance, custom-built VPN solution focusing on zero-logging and military-grade encryption. Features optimized routing algorithms for minimal latency.',
-            tech: ['Rust', 'Networking', 'Cryptography', 'Linux'],
+            description: 'Built a Chrome browser extension that functions as a lightweight proxy switcher. The extension uses Chrome native Proxy API (Manifest V3) to route all browser traffic through user-defined proxy servers, allowing IP address changes across different countries. Features include saving multiple proxy profiles, one-click connect and disconnect, and live connection status. Built entirely with vanilla JavaScript, HTML, and CSS — no frameworks, no third-party dependencies.',
+            tech: ['Javascript', 'Networking', 'Proxy Configiration', 'Chrome Extension Development'],
             link: '#',
             icon: <Shield className="w-8 h-8 text-amethyst-purple" />,
             gradient: "from-pink-500/20 to-purple-500/20"
