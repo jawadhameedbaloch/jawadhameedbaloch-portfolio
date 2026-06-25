@@ -1,3 +1,4 @@
+```tsx
 import { Github, ExternalLink, Bot, Shield, ArrowUpRight, ScanEye, Code2 } from 'lucide-react';
 import RevealCard from '../ui/RevealCard';
 import { motion } from 'framer-motion';
@@ -21,9 +22,17 @@ const Projects = () => {
             gradient: "from-cyan-500/20 to-blue-500/20"
         },
         {
+            title: 'Echofile',
+            description: 'Built a free source-traced document chat platform that allows users to upload PDFs, Word documents, PowerPoint presentations, CSVs, and Excel files and ask questions in natural language. Every response is grounded in the uploaded document with clickable citations that jump directly to the exact page, slide, or row. Features include real file-signature validation, a self-healing retrieval pipeline that automatically adapts context size to model limits, rate-limited APIs, and zero data retention with all processing confined to the active browser session.',
+            tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Groq API', 'pdfjs-dist', 'mammoth', 'exceljs', 'Vercel'],
+            link: 'https://echofile.vercel.app/',
+            icon: <Bot className="w-8 h-8 text-cyber-cyan" />,
+            gradient: "from-emerald-500/20 to-cyan-500/20"
+        },
+        {
             title: 'FreeVPN Proxy Switcher',
-            description: 'Built a Chrome browser extension that functions as a lightweight proxy switcher. The extension uses Chrome native Proxy API (Manifest V3) to route all browser traffic through user-defined proxy servers, allowing IP address changes across different countries. Features include saving multiple proxy profiles, one-click connect and disconnect, and live connection status. Built entirely with vanilla JavaScript, HTML, and CSS — no frameworks, no third-party dependencies.',
-            tech: ['Javascript', 'Networking', 'Proxy Configiration', 'Chrome Extension Development'],
+            description: 'Chrome extension that routes browser traffic through user-defined proxy servers using the Chrome Proxy API. Features saved proxy profiles, one-click connect/disconnect, live status monitoring, and country-based IP switching, built entirely with vanilla JavaScript and Manifest V3.',
+            tech: ['JavaScript', 'Chrome Extension', 'Proxy API', 'Networking'],
             link: '#',
             icon: <Shield className="w-8 h-8 text-amethyst-purple" />,
             gradient: "from-pink-500/20 to-purple-500/20"
@@ -39,8 +48,12 @@ const Projects = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <span className="text-cyber-cyan font-mono text-sm tracking-widest uppercase block mb-2">Innovation Lab</span>
-                        <h2 className="text-4xl md:text-5xl font-bold font-display text-white">Featured Projects</h2>
+                        <span className="text-cyber-cyan font-mono text-sm tracking-widest uppercase block mb-2">
+                            Innovation Lab
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-bold font-display text-white">
+                            Featured Projects
+                        </h2>
                     </motion.div>
 
                     <motion.a
@@ -52,7 +65,9 @@ const Projects = () => {
                         className="group flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:border-cyber-cyan/30 transition-all duration-300"
                     >
                         <Github className="w-5 h-5 text-gray-300 group-hover:text-white" />
-                        <span className="text-gray-300 group-hover:text-white font-medium">View Archive</span>
+                        <span className="text-gray-300 group-hover:text-white font-medium">
+                            View Archive
+                        </span>
                         <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-cyber-cyan group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </motion.a>
                 </div>
@@ -65,18 +80,26 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className={`${index === 0 ? 'md:col-span-2' : ''} h-full`}
+                            className={`${index === 2 ? 'md:col-span-2' : ''} h-full`}
                         >
                             <RevealCard className="h-full flex flex-col hover:shadow-2xl hover:shadow-cyber-cyan/10 transition-all duration-500 group">
-                                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                                <div
+                                    className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                                />
 
                                 <div className="relative p-8 flex flex-col h-full z-10">
                                     <div className="flex justify-between items-start mb-6">
                                         <div className="p-3 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-xl group-hover:scale-110 transition-transform duration-300">
                                             {project.icon}
                                         </div>
+
                                         {project.link !== '#' && (
-                                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-white transition-colors">
+                                            <a
+                                                href={project.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="p-2 text-gray-400 hover:text-white transition-colors"
+                                            >
                                                 <ExternalLink className="w-6 h-6" />
                                             </a>
                                         )}
@@ -92,7 +115,10 @@ const Projects = () => {
 
                                     <div className="flex flex-wrap gap-2 mt-auto">
                                         {project.tech.map((t, i) => (
-                                            <span key={i} className="px-3 py-1.5 text-xs font-medium text-cyber-cyan bg-cyber-cyan/10 rounded-full border border-cyber-cyan/20">
+                                            <span
+                                                key={i}
+                                                className="px-3 py-1.5 text-xs font-medium text-cyber-cyan bg-cyber-cyan/10 rounded-full border border-cyber-cyan/20"
+                                            >
                                                 {t}
                                             </span>
                                         ))}
@@ -108,3 +134,4 @@ const Projects = () => {
 };
 
 export default Projects;
+```
