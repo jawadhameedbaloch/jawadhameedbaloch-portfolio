@@ -137,7 +137,7 @@ export default function Hero() {
           {[
             { icon: Github, label: 'GitHub', href: profile.links.github, colorClass: '' },
             { icon: Linkedin, label: 'LinkedIn', href: profile.links.linkedin, colorClass: '' },
-            { icon: XIcon, label: 'X', href: profile.links.twitter, colorClass: '' },
+            { icon: XIcon, label: 'Twitter/X', href: profile.links.twitter, colorClass: '' },
             { icon: Mail, label: 'Email', href: `mailto:${profile.email}`, colorClass: '' },
           ].map((item, i) => (
             <a
