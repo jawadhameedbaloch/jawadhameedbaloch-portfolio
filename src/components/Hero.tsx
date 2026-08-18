@@ -275,7 +275,7 @@ export default function Hero() {
             <ArrowUpRight size={14} className="text-fg-secondary group-hover:text-accent" />
           </a>
 
-          <a href="/resume.pdf" target="_blank" className="group flex-1 flex items-center justify-center gap-1.5 px-2 py-4 rounded-2xl border border-border hover:border-accent hover:bg-accent/5 transition-all duration-300">
+          <a href="/Jawad Hameed Baloch-Resume.pdf" target="_blank" className="group flex-1 flex items-center justify-center gap-1.5 px-2 py-4 rounded-2xl border border-border hover:border-accent hover:bg-accent/5 transition-all duration-300">
             <span className="text-[10px] font-medium tracking-widest text-fg-secondary group-hover:text-fg whitespace-nowrap">RESUME</span>
             <Download size={14} className="text-fg-secondary group-hover:text-fg" />
           </a>
