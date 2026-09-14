@@ -6,7 +6,7 @@ import { profile } from '../data/profile';
 
 const CHANNELS = [
   { label: 'Email', value: profile.email, href: `mailto:${profile.email}`, icon: Mail },
-  { label: 'LinkedIn', value: 'in/jawadhameedbaloch2', href: profile.links.linkedin, icon: Linkedin },
+  { label: 'LinkedIn', value: 'in/jawadhameedbaloch', href: profile.links.linkedin, icon: Linkedin },
   { label: 'GitHub', value: 'jawadhameedbaloch', href: profile.links.github, icon: Github },
   { label: 'Phone', value: profile.phone, href: `tel:${profile.phone.replace(/\s/g, '')}`, icon: Phone },
 ];
