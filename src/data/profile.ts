@@ -7,7 +7,7 @@ export const profile = {
   email: 'jawadhameedbaloch@gmail.com',
   phone: '+92 326 9236946',
   links: {
-    linkedin: 'https://www.linkedin.com/in/jawadhameedbaloch2/',
+    linkedin: 'https://www.linkedin.com/in/jawadhameedbaloch/',
     github: 'https://github.com/jawadhameedbaloch',
     portfolio: 'https://jawadhameedbaloch.com',
     twitter: 'https://x.com/jawadhameedjhb',
